@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DSA_Visualizer</string>
+    <string name="Size_info">By default the stack size is <b>15</b>  </string>
+</resources>

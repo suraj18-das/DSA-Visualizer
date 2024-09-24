@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context=".prefixTopostfix">
+
+    <EditText
+        android:id="@+id/prefixInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter preix expression"
+        android:textSize="18sp" />
+
+    <!-- Postfix result display -->
+    <TextView
+        android:id="@+id/postfixOutput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Postfix expression"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+    <!-- Convert Button -->
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convert"
+        android:layout_gravity="center"
+        android:textSize="16sp" />
+
+    <!-- TableLayout to display the step-by-step conversion process -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp">
+
+        <TableLayout
+            android:id="@+id/conversionTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:weightSum="4"
+            android:stretchColumns="0,1,2,3">
+
+            <!-- Table Header -->
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sr No"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expression"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:gravity="center"
+                    android:text="Stack"
+                    android:textStyle="bold"
+                    android:padding="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/table_row_border"
+                    android:gravity="center"
+                    android:text="Postfix"
+                    android:textStyle="bold"
+                    android:padding="10dp" />
+            </TableRow>
+
+            <!-- Table rows for conversion will be added dynamically -->
+
+        </TableLayout>
+    </ScrollView>
+
+</LinearLayout>

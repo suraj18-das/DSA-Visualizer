@@ -1,0 +1,75 @@
+<!-- res/layout/activity_main.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:id="@+id/soring"
+    android:text="Sorting Algorithms"
+    android:textSize="17sp"
+    android:textStyle="bold"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/soring"
+        android:id="@+id/searching"
+        android:text="Searching Algorithms"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/searching"
+        android:id="@+id/stackArray"
+        android:text="Stack array Implementation"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/stackArray"
+        android:id="@+id/stackList"
+        android:text="Stack Linekd list Implementation"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/stackList"
+        android:id="@+id/infixTopostfix"
+        android:text="Infix to Postfix"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/infixTopostfix"
+        android:id="@+id/infixToprefix"
+        android:text="Infix to Prefix"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/infixToprefix"
+        android:id="@+id/prefixTopostfix"
+        android:text="Prefix to Postfix"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+</RelativeLayout>

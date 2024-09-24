@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".Stack_array">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Size_info"
+        android:textSize="17sp"
+        />
+    <EditText
+        android:id="@+id/inputValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter value to push"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/pushButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Push" />
+
+    <Button
+        android:id="@+id/popButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pop" />
+
+    <Button
+        android:id="@+id/peekButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Peek" />
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Result: "
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/topView"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top: -1"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/stackView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+
+
+</LinearLayout>

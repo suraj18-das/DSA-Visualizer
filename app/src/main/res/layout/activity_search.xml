@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Search"
+    android:padding="10dp">
+
+    <!-- Array Input Field -->
+    <EditText
+        android:id="@+id/arrayInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter array elements (comma-separated)"
+        android:inputType="text"
+        android:textSize="17sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Search Element Input Field -->
+    <EditText
+        android:id="@+id/searchElementInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter search element"
+        android:inputType="number"
+        android:textSize="17sp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Start Button -->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Search"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Search Information -->
+    <TextView
+        android:id="@+id/searchingValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Searching for: "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"/>
+
+    <!-- Pointers (Low, Mid, High) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/lowValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low: 0"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_blue_light"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/midValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mid: 0"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_green_light"
+            android:layout_margin="16dp" />
+
+        <TextView
+            android:id="@+id/highValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High: 0"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_orange_light"
+            android:layout_margin="16dp" />
+    </LinearLayout>
+
+    <!-- Array Display -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <GridLayout
+            android:id="@+id/arrayGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="16"
+            android:alignmentMode="alignMargins"
+            android:padding="16dp"
+            android:layout_gravity="center"/>
+
+    </ScrollView>
+
+    <!-- Control Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <!-- Pause/Resume Button -->
+        <Button
+            android:id="@+id/pauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <!-- Step Backward Button -->
+        <Button
+            android:id="@+id/stepBackwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step Back"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:visibility="gone" />
+
+        <!-- Step Forward Button -->
+        <Button
+            android:id="@+id/stepForwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Step Forward"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Found Status -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/foundStatus"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</LinearLayout>
