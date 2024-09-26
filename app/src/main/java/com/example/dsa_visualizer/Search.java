@@ -88,20 +88,6 @@ public class Search extends AppCompatActivity {
         });
     }
 
-    private void toggleSearch() {
-        if (isPaused) {
-            pauseButton.setText("Pause");
-            handler.post(searchRunnable);  // Resume search
-        } else {
-            if (getInputValues()) {
-                startBinarySearch();
-                pauseButton.setVisibility(View.VISIBLE);
-                stepForwardButton.setVisibility(View.VISIBLE);
-                stepBackwardButton.setVisibility(View.VISIBLE);
-            }
-        }
-        isPaused = !isPaused;
-    }
 
     private boolean getInputValues() {
         String arrayString = ((EditText) findViewById(R.id.arrayInput)).getText().toString();

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".Queue_array">
+
+    <!-- Section for Head and Tail -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Head section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Head"
+                android:textSize="16sp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/frontView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/queue_item_background"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <!-- Tail section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tail"
+                android:textSize="16sp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/rearView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:background="@drawable/queue_item_background"
+                android:padding="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Queue Array Visualization -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/queueView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Queue items will be dynamically added here -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Queue Array Index -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/indexView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Index numbers dynamically added here -->
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Buttons for Enqueue, Dequeue, and Peek -->
+    <EditText
+        android:id="@+id/inputValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter value to enqueue"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/enqueueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enqueue" />
+
+    <Button
+        android:id="@+id/dequeueButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dequeue" />
+
+    <Button
+        android:id="@+id/peekButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Peek" />
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Result: "
+        android:textSize="18sp" />
+
+</LinearLayout>

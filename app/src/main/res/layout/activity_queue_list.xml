@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".Queue_list">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Queue (Linked List Implementation)"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="#1976D2"
+        android:padding="8dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/inputData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter value"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/enqueueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enqueue"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/dequeueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dequeue"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/clearQueueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Queue"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- Horizontal Scroll View -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="horizontal">
+
+        <com.example.dsa_visualizer.HelperClasses.QueueCanvas
+            android:id="@+id/queueCanvas"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:background="#f5f5f5"
+            android:padding="16dp" />
+    </HorizontalScrollView>
+
+</LinearLayout>

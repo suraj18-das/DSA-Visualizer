@@ -77,6 +77,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        findViewById(R.id.queueArray).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, Queue_array.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.queueList).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, Queue_list.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

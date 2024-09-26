@@ -1,18 +1,8 @@
 package com.example.dsa_visualizer;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.view.View;
 import android.widget.EditText;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 import com.example.dsa_visualizer.HelperClasses.StackCanvas;
 import com.example.dsa_visualizer.HelperClasses.StackList;
 
@@ -52,5 +42,5 @@ public class Stack_list extends AppCompatActivity {
 
     }
 
-    // Custom View class to draw the stac
+    // Custom View class to draw the stack
 }

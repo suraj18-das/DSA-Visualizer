@@ -72,4 +72,24 @@
         android:textSize="17sp"
         android:textStyle="bold"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/prefixTopostfix"
+        android:id="@+id/queueArray"
+        android:text="Queue array implementation"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/queueArray"
+        android:id="@+id/queueList"
+        android:text="Queue Linked list implementation"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        />
 </RelativeLayout>
