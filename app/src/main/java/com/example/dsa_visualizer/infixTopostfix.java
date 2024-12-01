@@ -3,6 +3,7 @@ package com.example.dsa_visualizer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
@@ -21,8 +22,8 @@ import java.util.Stack;
 public class infixTopostfix extends AppCompatActivity {
 
     private EditText infixInput;
-    private TextView postfixOutput;
-    private Button convertButton;
+    private TextView Output;
+    private Button prefix,postfix;
     private TableLayout conversionTable;
 
     @Override
@@ -31,11 +32,12 @@ public class infixTopostfix extends AppCompatActivity {
         setContentView(R.layout.activity_infix_topostfix);
 
         infixInput = findViewById(R.id.infixInput);
-        postfixOutput = findViewById(R.id.postfixOutput);
-        convertButton = findViewById(R.id.convertButton);
+        Output = findViewById(R.id.Output);
+        prefix=findViewById(R.id.PrefixButton);
+        postfix=findViewById(R.id.PostfixButton);
         conversionTable = findViewById(R.id.conversionTable);
 
-        convertButton.setOnClickListener(v -> {
+        postfix.setOnClickListener(v -> {
             String infix = infixInput.getText().toString().trim();
             if (TextUtils.isEmpty(infix)) {
                 Toast.makeText(this, "Please enter an infix expression", Toast.LENGTH_SHORT).show();
@@ -46,7 +48,23 @@ public class infixTopostfix extends AppCompatActivity {
 
             // Convert to postfix and display the steps
             String postfix = convertInfixToPostfix(infix);
-            postfixOutput.setText(postfix);
+            Output.setText(postfix);
+        });
+        prefix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String infix = infixInput.getText().toString().trim();
+                if (TextUtils.isEmpty(infix)) {
+                    Toast.makeText(infixTopostfix.this, "Please enter an infix expression", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                // Clear any previous conversion steps
+                clearTableRows();
+
+                // Convert to prefix and display the steps
+                String prefix = convertInfixToPrefix(infix);
+                Output.setText(prefix);
+            }
         });
     }
 
@@ -100,13 +118,28 @@ public class infixTopostfix extends AppCompatActivity {
         return postfix.toString();
     }
 
-    // Helper method to add rows dynamically to the table
+    private String convertInfixToPrefix(String infix) {
+        // Step 1: Reverse the infix expression
+        StringBuilder reversedInfix = new StringBuilder(infix).reverse();
+        for (int i = 0; i < reversedInfix.length(); i++) {
+            if (reversedInfix.charAt(i) == '(') {
+                reversedInfix.setCharAt(i, ')');
+            } else if (reversedInfix.charAt(i) == ')') {
+                reversedInfix.setCharAt(i, '(');
+            }
+        }
+
+        // Step 2: Convert the reversed infix to postfix
+        String reversedPostfix = convertInfixToPostfix(reversedInfix.toString());
+
+        // Step 3: Reverse the postfix expression to get prefix
+        return new StringBuilder(reversedPostfix).reverse().toString();
+    }
+
+
     // Helper method to add rows dynamically to the table
     private void addRowToTable(int step, String expression, String stackState, String postfix) {
         TableRow row = new TableRow(this);
-
-        // Set row background to include border
-//        row.setBackgroundResource(R.drawable.table_row_border);
 
         // Create TextViews for each column
         TextView stepView = new TextView(this);

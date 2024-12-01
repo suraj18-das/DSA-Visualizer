@@ -3,6 +3,7 @@ package com.example.dsa_visualizer;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
@@ -22,7 +23,7 @@ public class prefixTopostfix extends AppCompatActivity {
 
     private EditText prefixInput;
     private TextView postfixOutput;
-    private Button convertButton;
+    private Button postfixButton,infixButton;
     private TableLayout conversionTable;
 
     @Override
@@ -31,13 +32,15 @@ public class prefixTopostfix extends AppCompatActivity {
         setContentView(R.layout.activity_prefix_topostfix);
         prefixInput = findViewById(R.id.prefixInput);
         postfixOutput = findViewById(R.id.postfixOutput);
-        convertButton = findViewById(R.id.convertButton);
+        postfixButton = findViewById(R.id.postfixButton);
+        infixButton = findViewById(R.id.infixButton);
+
         conversionTable = findViewById(R.id.conversionTable);
 
-        convertButton.setOnClickListener(v -> {
+        postfixButton.setOnClickListener(v -> {
             String prefix = prefixInput.getText().toString().trim();
             if (TextUtils.isEmpty(prefix)) {
-                Toast.makeText(this, "Please enter an infix expression", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please enter an Prefix expression", Toast.LENGTH_SHORT).show();
                 return;
             }
             // Clear any previous conversion steps
@@ -46,6 +49,20 @@ public class prefixTopostfix extends AppCompatActivity {
             // Convert to postfix and display the steps
             String postfix = convertPrefixToPostfix(reversePrefix(prefix));
             postfixOutput.setText(postfix);
+        });
+        infixButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String prefix = prefixInput.getText().toString().trim();
+                if (TextUtils.isEmpty(prefix)) {
+                    Toast.makeText(prefixTopostfix.this, "Please enter an Prefix expression", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                // Convert to infix and display the result
+                clearTableRows();
+                String infix = convertPrefixToInfix(prefix);
+                postfixOutput.setText(infix);
+            }
         });
 
     }
@@ -92,6 +109,38 @@ public class prefixTopostfix extends AppCompatActivity {
         }
 
         return postfix.toString();
+    }
+
+    // Method to convert prefix expression to infix
+    // Method to convert prefix expression to infix and display steps
+    private String convertPrefixToInfix(String prefix) {
+        Stack<String> stack = new Stack<>();
+        int stepCount = 0; // To track steps
+
+        // Process the prefix expression from right to left
+        for (int i = prefix.length() - 1; i >= 0; i--) {
+            char ch = prefix.charAt(i);
+
+            if (Character.isLetterOrDigit(ch)) {
+                // If the character is an operand, push it to the stack
+                stack.push(String.valueOf(ch));
+                // Add the current state to the table after pushing the operand
+                addRowToTable(stepCount++, String.valueOf(ch), stack.toString(), "");
+            } else { // Operator encountered
+                String operand1 = stack.pop();
+                String operand2 = stack.pop();
+
+                // Form the infix expression
+                String infixExpression = "(" + operand1 + ch + operand2 + ")";
+                stack.push(infixExpression);
+
+                // Add the current state to the table after processing the operator
+                addRowToTable(stepCount++, String.valueOf(ch), stack.toString(), infixExpression);
+            }
+        }
+
+        // The final expression on the stack is the infix expression
+        return stack.peek();
     }
 
 

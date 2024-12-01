@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="16dp"
+    android:background="#F8F9FA"
     tools:context=".prefixTopostfix">
 
+    <!-- Input Field -->
     <EditText
         android:id="@+id/prefixInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter preix expression"
-        android:textSize="18sp" />
+        android:hint="Enter prefix expression"
+        android:padding="12dp"
+        android:background="@drawable/edit_text_background"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp"
+        android:inputType="text" />
 
-    <!-- Postfix result display -->
+    <!-- Postfix Result -->
     <TextView
         android:id="@+id/postfixOutput"
         android:layout_width="match_parent"
@@ -24,78 +29,100 @@
         android:text="Postfix expression"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:padding="12dp"
+        android:background="@drawable/result_background"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp" />
 
-    <!-- Convert Button -->
-    <Button
-        android:id="@+id/convertButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Convert"
-        android:layout_gravity="center"
-        android:textSize="16sp" />
-
-    <!-- TableLayout to display the step-by-step conversion process -->
-    <ScrollView
+    <!-- Convert Buttons Layout -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp">
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/postfixButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#007BFF"
+            android:textColor="#FFFFFF"
+            android:text="Convert to Postfix"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/infixButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#007BFF"
+            android:textColor="#FFFFFF"
+            android:text="Convert to Infix"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- Conversion Process Table -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TableLayout
             android:id="@+id/conversionTable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:weightSum="4"
-            android:stretchColumns="0,1,2,3">
+            android:background="#FFFFFF"
+            android:padding="12dp"
+            android:elevation="4dp"
+            android:stretchColumns="0,1,2,3"
+            android:divider="@android:color/darker_gray"
+            android:showDividers="middle">
 
             <!-- Table Header -->
-            <TableRow>
+            <TableRow
+                android:background="#E0E0E0">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sr No"
+                    android:text="Step"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:layout_weight="1"
-                    android:background="@drawable/table_row_border"
-                    android:padding="10dp" />
+                    android:padding="8dp"
+                    android:textColor="#333333" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Expression"
-                    android:layout_weight="1"
-                    android:background="@drawable/table_row_border"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"/>
+                    android:padding="8dp"
+                    android:textColor="#333333" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/table_row_border"
-                    android:gravity="center"
                     android:text="Stack"
                     android:textStyle="bold"
-                    android:padding="10dp" />
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:textColor="#333333" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/table_row_border"
-                    android:gravity="center"
                     android:text="Postfix"
                     android:textStyle="bold"
-                    android:padding="10dp" />
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:textColor="#333333" />
             </TableRow>
 
-            <!-- Table rows for conversion will be added dynamically -->
-
+            <!-- Dynamic rows for conversion process will be added in code -->
         </TableLayout>
     </ScrollView>
 

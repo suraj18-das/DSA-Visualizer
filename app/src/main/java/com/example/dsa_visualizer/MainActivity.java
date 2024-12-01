@@ -3,19 +3,8 @@ package com.example.dsa_visualizer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.SeekBar;
 import android.widget.TextView;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Sorting=findViewById(R.id.soring);
+        Sorting=findViewById(R.id.sorting);
         Searching=findViewById(R.id.searching);
         Stack_Array=findViewById(R.id.stackArray);
         Stack_List=findViewById(R.id.stackList);
@@ -56,21 +45,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        findViewById(R.id.infixTopostfix).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.infixToPostfix).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, infixTopostfix.class);
                 startActivity(intent);
             }
         });
-        findViewById(R.id.infixToprefix).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.infixToPrefix).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this, infixToprefix.class);
+                Intent intent=new Intent(MainActivity.this, postfixToinfix_prefix.class);
                 startActivity(intent);
             }
         });
-        findViewById(R.id.prefixTopostfix).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.prefixToPostfix).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, prefixTopostfix.class);

@@ -1,95 +1,177 @@
-<!-- res/layout/activity_main.xml -->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:id="@+id/soring"
-    android:text="Sorting Algorithms"
-    android:textSize="17sp"
-    android:textStyle="bold"
-    />
+    android:background="#F8F9FA"
+    android:padding="16dp">
+
+    <!-- Title -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvHeader"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/soring"
+        android:text="Algorithm Visualizations"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="#333333"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Sorting Algorithms -->
+    <TextView
+        android:id="@+id/sorting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sorting Algorithms"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Searching Algorithms -->
+    <TextView
         android:id="@+id/searching"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:text="Searching Algorithms"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/sorting"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Stack Array Implementation -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/searching"
         android:id="@+id/stackArray"
-        android:text="Stack array Implementation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Stack Array Implementation"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/searching"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Stack Linked List Implementation -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/stackArray"
         android:id="@+id/stackList"
-        android:text="Stack Linekd list Implementation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Stack Linked List Implementation"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/stackArray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Infix to Postfix/Prefix -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/infixToPostfix"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/stackList"
-        android:id="@+id/infixTopostfix"
-        android:text="Infix to Postfix"
+        android:text="Infix to Postfix/Prefix"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/stackList"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Postfix to Prefix/Infix -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/infixToPrefix"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/infixTopostfix"
-        android:id="@+id/infixToprefix"
-        android:text="Infix to Prefix"
+        android:text="Postfix to Prefix/Infix"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/infixToPostfix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Prefix to Postfix/Infix -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/prefixToPostfix"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/infixToprefix"
-        android:id="@+id/prefixTopostfix"
-        android:text="Prefix to Postfix"
+        android:text="Prefix to Postfix/Infix"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/infixToPrefix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Queue Array Implementation -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/prefixTopostfix"
         android:id="@+id/queueArray"
-        android:text="Queue array implementation"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        />
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/queueArray"
-        android:id="@+id/queueList"
-        android:text="Queue Linked list implementation"
+        android:text="Queue Array Implementation"
         android:textSize="17sp"
         android:textStyle="bold"
-        />
-</RelativeLayout>
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/prefixToPostfix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Queue Linked List Implementation -->
+    <TextView
+        android:id="@+id/queueList"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Queue Linked List Implementation"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#007BFF"
+        android:gravity="center"
+        android:background="@drawable/card_background"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@id/queueArray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

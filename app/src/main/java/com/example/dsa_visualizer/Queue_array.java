@@ -35,6 +35,7 @@ public class Queue_array extends AppCompatActivity {
         Button enqueueButton = findViewById(R.id.enqueueButton);
         Button dequeueButton = findViewById(R.id.dequeueButton);
         Button peekButton = findViewById(R.id.peekButton);
+        Button resest=findViewById(R.id.resetQueue);
 
         enqueueButton.setOnClickListener(v -> {
             String input = inputValue.getText().toString();
@@ -55,6 +56,13 @@ public class Queue_array extends AppCompatActivity {
         peekButton.setOnClickListener(v -> {
             int frontValue = queue.peek();
             resultView.setText("Peek: " + (frontValue == -1 ? "Queue is empty" : frontValue));
+        });
+        resest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                queue.resetQueue();
+                updateQueueView();
+            }
         });
 
         updateQueueView();

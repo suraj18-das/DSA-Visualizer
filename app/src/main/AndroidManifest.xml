@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DSA_Visualizer"
         tools:targetApi="31">
         <activity
+            android:name=".postfixToinfix_prefix"
+            android:exported="false" />
+        <activity
+            android:name="com.example.postfixToInfix_prefix"
+            android:exported="false" />
+        <activity
             android:name=".Queue_list"
             android:exported="false" />
         <activity

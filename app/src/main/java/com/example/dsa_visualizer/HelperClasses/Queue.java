@@ -54,6 +54,13 @@ public class Queue {
         }
         return -1; // Indicates the queue is empty
     }
+    public void resetQueue() {
+        front = 0;
+        rear = -1;
+        currentSize = 0;
+        queueArray = new int[maxSize]; // Reinitialize the array to remove all elements
+    }
+
 
     public int[] getQueueArray() {
         return queueArray;

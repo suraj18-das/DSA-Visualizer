@@ -6,83 +6,127 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F8F9FA"
+    android:padding="16dp"
     tools:context=".Bubble_sort">
 
-    <Button
-        android:id="@+id/generateButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:text="Generate Random Bars" />
-
-    <RelativeLayout
+    <!-- Title Header -->
+    <TextView
+        android:id="@+id/tvHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Sorting Visualizer"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#333333"
+        android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/firstR"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/BubbleButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Bubble Sort" />
-            <Button
-                android:id="@+id/SelectionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_alignParentEnd="true"
-                android:text="Selection Sort" />
-            <Button
-                android:id="@+id/InsertionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:layout_alignParentEnd="true"
-                android:text="Insertion Sort" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/firstR"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/QuickButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Quick Sort" />
-            <Button
-                android:id="@+id/MergeButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_alignParentEnd="true"
-                android:text="Merge Sort" />
-<!--            <Button-->
-<!--                android:id="@+id/InsertionButton"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginStart="8dp"-->
-<!--                android:layout_alignParentEnd="true"-->
-<!--                android:text="Insertion Sort" />-->
-        </LinearLayout>
+    <!-- Generate Button -->
+    <Button
+        android:id="@+id/generateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#007BFF"
+        android:text="Generate Random Bars"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
-    </RelativeLayout>
+    <!-- Sorting Algorithm Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/BubbleButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#28A745"
+            android:text="Bubble Sort"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/SelectionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#FFC107"
+            android:text="Selection Sort"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/InsertionButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#DC3545"
+            android:text="Insertion Sort"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/QuickButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#17A2B8"
+            android:text="Quick Sort"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/MergeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#6610F2"
+            android:text="Merge Sort"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Speed Slider -->
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Adjust Sorting Speed"
+        android:textColor="#333333"
+        android:textStyle="bold" />
+
     <SeekBar
         android:id="@+id/speedSlider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:max="1000"
-        android:progress="100" />
+        android:progress="100"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Bar View -->
     <com.example.dsa_visualizer.HelperClasses.BarView
         android:id="@+id/barView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#E9ECEF" />
 
 </LinearLayout>

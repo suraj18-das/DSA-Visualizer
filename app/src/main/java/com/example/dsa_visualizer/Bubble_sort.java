@@ -195,7 +195,7 @@ public class Bubble_sort extends AppCompatActivity {
     }
 
     // Insertion Sort method
-    private void insertionSort() {
+    private void insertionSort()                                             {
         isSorting = true;
         disableButtons(true);
 
@@ -231,6 +231,7 @@ public class Bubble_sort extends AppCompatActivity {
             });
         }).start();
     }
+
     private int partition(int low, int high) {
         Bar pivot = bars.get(high);  // Pivot element is the last one
         int i = (low - 1);  // Index of the smaller element
