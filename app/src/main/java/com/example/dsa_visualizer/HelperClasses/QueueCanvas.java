@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 public class QueueCanvas extends View {
@@ -31,6 +32,8 @@ public class QueueCanvas extends View {
         int totalWidth = getTotalWidth();  // Calculate total width needed based on queue size
         int totalHeight = nodeHeight + getPaddingTop() + getPaddingBottom() + 100;  // Added extra space for pointers
         setMeasuredDimension(totalWidth, totalHeight);  // Set the width and height
+        Log.d("onMeasure", "padding top: "+getPaddingTop());
+        Log.d("onMeasure", "padding bottom: "+getPaddingBottom());
     }
 
     private int getTotalWidth() {
@@ -95,7 +98,7 @@ public class QueueCanvas extends View {
                 paint.setTextSize(50);
                 canvas.drawText("Rear",x + (nodeWidth / 4), y -100, paint);  // Label below the node
                 // Draw an arrow pointing to the rear node
-                canvas.drawLine(x + (nodeWidth / 2), y + nodeHeight, x + (nodeWidth / 2), y + nodeHeight + 50, paint);
+                canvas.drawLine(x + (nodeWidth / 2), y -50, x + (nodeWidth / 2), y , paint);
             }
 
             // Move to the next node position

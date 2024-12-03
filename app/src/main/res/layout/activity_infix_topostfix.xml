@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="@dimen/_16dp"
     android:background="#F8F9FA"
     tools:context=".infixTopostfix">
 
@@ -15,8 +15,9 @@
         android:id="@+id/tvHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/inter_tight_thin"
         android:gravity="center"
-        android:padding="16dp"
+        android:padding="@dimen/_16dp"
         android:text="Infix to Postfix/Prefix Converter"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#333333"
@@ -28,10 +29,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter infix expression"
-        android:padding="12dp"
+        android:padding="@dimen/_12dp"
         android:background="@drawable/rounded_edittext"
         android:textSize="18sp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="@dimen/_16dp" />
 
     <!-- Postfix/Prefix Result -->
     <TextView
@@ -42,9 +43,9 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#555555"
-        android:padding="10dp"
+        android:padding="@dimen/_10dp"
         android:background="@drawable/rounded_textview"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="@dimen/_16dp" />
 
     <!-- Buttons for Conversion -->
     <LinearLayout
@@ -52,20 +53,20 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="@dimen/_16dp">
 
         <Button
             android:id="@+id/PostfixButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/_8dp"
             android:backgroundTint="#007BFF"
             android:text="Postfix"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:padding="12dp" />
+            android:padding="@dimen/_12dp" />
 
         <Button
             android:id="@+id/PrefixButton"
@@ -77,7 +78,7 @@
             android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:padding="12dp" />
+            android:padding="@dimen/_12dp" />
     </LinearLayout>
 
     <!-- Table for Step-by-Step Conversion -->
@@ -89,14 +90,14 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#333333"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="@dimen/_8dp" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"
-        android:layout_marginBottom="16dp"
+        android:padding="@dimen/_8dp"
+        android:layout_marginBottom="@dimen/_16dp"
         android:background="@drawable/rounded_background">
 
         <TableLayout
@@ -115,7 +116,7 @@
                     android:text="Sr No"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:padding="8dp" />
+                    android:padding="@dimen/_8dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -123,7 +124,7 @@
                     android:text="Expression"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:padding="8dp" />
+                    android:padding="@dimen/_8dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -131,7 +132,7 @@
                     android:text="Stack"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:padding="8dp" />
+                    android:padding="@dimen/_8dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -139,7 +140,7 @@
                     android:text="Postfix"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:padding="8dp" />
+                    android:padding="@dimen/_8dp" />
             </TableRow>
 
             <!-- Rows for conversion will be added dynamically -->

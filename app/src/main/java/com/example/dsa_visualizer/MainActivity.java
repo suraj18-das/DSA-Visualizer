@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView Sorting,Searching,Stack_Array,Stack_List;
+    TextView Sorting,Searching,Stack_Array,Stack_List,BstVisualize;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +77,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this, Queue_list.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.BstVisualize).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, BstVisualizationActivity.class);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.AVLVisualize).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this, AVLTreeActivity.class);
                 startActivity(intent);
             }
         });

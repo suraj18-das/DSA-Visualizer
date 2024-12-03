@@ -39,6 +39,7 @@ public class Queue_list extends AppCompatActivity {
 
         findViewById(R.id.clearQueueButton).setOnClickListener(v -> {
             queue.clear();
+            queueCanvas.setQueue(queue);
             queueCanvas.invalidate(); // Redraw the canvas
         });
     }

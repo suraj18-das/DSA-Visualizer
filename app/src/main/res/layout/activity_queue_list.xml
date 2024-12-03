@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:padding="@dimen/_16dp"
     android:background="#FAFAFA"
     tools:context=".Queue_list">
 
@@ -19,9 +19,9 @@
         android:textStyle="bold"
         android:textColor="#FFFFFF"
         android:background="#1976D2"
-        android:padding="12dp"
+        android:padding="@dimen/_12dp"
         android:gravity="center"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="@dimen/_16dp" />
 
     <!-- Input and Action Buttons Section -->
     <LinearLayout
@@ -30,7 +30,7 @@
         android:orientation="horizontal"
         android:weightSum="3"
         android:gravity="center_vertical"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="@dimen/_16dp">
 
         <EditText
             android:id="@+id/inputData"
@@ -39,10 +39,10 @@
             android:layout_weight="1"
             android:hint="Enter value"
             android:inputType="number"
-            android:padding="12dp"
+            android:padding="@dimen/_12dp"
             android:textSize="16sp"
             android:background="@drawable/edit_text_background"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="@dimen/_8dp" />
 
         <Button
             android:id="@+id/enqueueButton"
@@ -53,7 +53,7 @@
             android:backgroundTint="#4CAF50"
             android:textColor="#FFFFFF"
             android:textSize="16sp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="@dimen/_8dp" />
 
         <Button
             android:id="@+id/dequeueButton"
@@ -75,7 +75,7 @@
         android:backgroundTint="#FFC107"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="@dimen/_16dp" />
 
     <!-- Horizontal Scroll View for Visualization -->
     <HorizontalScrollView
@@ -87,10 +87,10 @@
         <com.example.dsa_visualizer.HelperClasses.QueueCanvas
             android:id="@+id/queueCanvas"
             android:layout_width="wrap_content"
-            android:layout_height="300dp"
+            android:layout_height="@dimen/_600dp"
             android:background="#F5F5F5"
-            android:elevation="4dp"
-            android:padding="16dp" />
+            android:elevation="@dimen/_4dp"
+            android:padding="@dimen/_16dp" />
     </HorizontalScrollView>
 
 </LinearLayout>
